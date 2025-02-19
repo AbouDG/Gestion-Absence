@@ -1,0 +1,133 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="arete_conge_maternite" language="java" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="30" bottomMargin="30" uuid="ce5c197d-258d-4d12-be98-0371af9b6702">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="GestionConge"/>
+
+	<parameter name="CONGE_ID" class="java.lang.Long"/>
+	<parameter name="personnelNom" class="java.lang.String"/>
+	<parameter name="personnelPrenom" class="java.lang.String"/>
+	<parameter name="matricule" class="java.lang.String"/>
+    <parameter name="referenceArrete" class="java.lang.String"/>
+	<query language="sql"><![CDATA[
+
+        SELECT * FROM conge_maternite WHERE id = $P{CONGE_ID}
+
+    ]]></query>
+	<field name="date_debut" class="java.util.Date"/>
+	<title height="170">
+		<element kind="staticText" uuid="b7d8a1e4-3d2e-4b44-b24f-83f8c5c7e9a3" stretchType="NoStretch" mode="Transparent" x="-10" y="-20" width="260" height="45" forecolor="#1BBF23" backcolor="#FFFFFF" fontSize="16.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[UNIVERSITE ASSANE SECK DE ZIGUINCHOR]]></text>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="b5f167f9-0825-4a6d-8711-22cd6a860752" x="0" y="80" width="250" height="90" forecolor="#305DF0" backcolor="#FFFFFF" fontSize="14.0" hTextAlign="Center">
+			<text><![CDATA[RECTORAT
+SECRETARIAT GENERAL
+     ---------------------
+DIRECTION DES RESSOURCES HUMAINES]]></text>
+		</element>
+		<element kind="staticText" uuid="02945508-26cc-41c8-a927-788afbee3ed3" x="360" y="90" width="168" height="30" forecolor="#305DF0" fontSize="11.0">
+			<text><![CDATA[Ziguinchor, le]]></text>
+		</element>
+		<element kind="staticText" uuid="c3752158-7706-4c64-a98b-345b2865834e" x="360" y="20" width="175" height="30" forecolor="#1E46F7" fontSize="10.0">
+			<text><![CDATA[_____/UASZ/CAB-REC/SG/DRH/bt]]></text>
+		</element>
+		<element kind="image" uuid="989f4c4e-6f5e-4326-8938-13ef7bd1366c" x="70" y="30" width="101" height="50">
+			<expression><![CDATA["C:/Users/AbouDiagneGaye/Desktop/StageADG/gestionConge/src/main/resources/image/assaneSeck.png"]]></expression>
+		</element>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<property name="com.jaspersoft.studio.layout"/>
+	</title>
+
+    <detail>
+        <band height="590">
+            <element kind="staticText" uuid="f329d6ef-0f16-474a-8f77-041ba9365e64" x="330" y="10" width="185" height="75" fontSize="14.0" bold="true" hTextAlign="Left">
+                <text><![CDATA[Arrêté accordant un congé
+administratif à un agent de l’université Assane Seck de Ziguinchor]]></text>
+                <property name="com.jaspersoft.studio.unit.y" value="px"/>
+            </element>
+            <element kind="staticText" uuid="48032a49-0c09-42f5-9186-a6577203ebe5" x="190" y="95" width="100" height="25" fontSize="12.0" bold="true">
+                <text><![CDATA[LE RECTEUR]]></text>
+            </element>
+            <element kind="textField" uuid="6b080230-9d25-4520-8c58-bca68b4ba6b1" x="0" y="110" width="515" height="230" fontName="Times New Roman" fontSize="13.0" hTextAlign="Justified">
+                <expression><![CDATA[
+        " VU la loi n° 73-37 du 31 juillet 1973 portant code de sécurité sociale ; \n" +
+        "VU la loi n° 97-17 du 1er décembre 1997 portant code du Travail de la République du Sénégal, modifiée ; \n" +
+        "VU la loi n° 2015-26 du 28 décembre 2015 relative aux universités publiques ; \n" +
+        "VU le décret n° 2000-103 du 17 février 2000 fixant le régime spécial applicable aux personnels administratifs, technique et de service des Universités ; \n" +
+        "VU le décret n° 2012-1269 du 08 novembre 2012 portant régime financier des universités ; \n" +
+        "VU le décret n° 2020-1032 du 13 Mai 2020 portant nomination de Monsieur Mamadou BADJI dans les fonctions de Recteur de l’Université Assane Seck de Ziguinchor ; \n" +
+        "VU le décret n° 2021-1506 du 16 novembre 2021 fixant les règles d’organisation et de fonctionnement de l’Université Assane Seck de Ziguinchor (UASZ) ; \n" +
+        "VU la demande de jouissance de congé de l’intéressé en date du " + new java.text.SimpleDateFormat("dd MMMM yyyy", java.util.Locale.FRENCH).format($F{date_debut}) + " ; \n" +
+        "VU les nécessités de services"
+    ]]></expression>
+            </element>
+            <element kind="staticText" uuid="1812759a-bff3-49c0-84c8-9b159eb9d4d5" x="180" y="350" width="100" height="20" fontSize="14.0" bold="true">
+                <text><![CDATA[ARRETE :]]></text>
+                <property name="com.jaspersoft.studio.unit.y" value="px"/>
+            </element>
+            <element kind="staticText" uuid="916375be-3b30-4560-a493-d14b6d8b9f50" x="0" y="450" width="515" height="79" fontName="Times New Roman" fontSize="13.0">
+                <text><![CDATA[Article 2. - A la fin de la jouissance du congé, il sera délivré à l’intéressé une
+attestation de reprise de service par l’autorité hiérarchique directe.
+
+Article 3. - Le Secrétaire général et l’Agent comptable de l’Université Assane Seck de
+Ziguinchor sont chargés chacun en ce qui le concerne, de l’exécution du présent arrêté.]]></text>
+            </element>
+            <element kind="staticText" uuid="bf00ae2f-ab54-4e46-821c-e665be49348a" x="0" y="550" width="190" height="35" fontName="Times New Roman">
+                <text><![CDATA[Cabinet Recteur/Secrétariat général 02
+Intéressé/DFC/AC/DRH 04
+Archives/Chronos 02]]></text>
+                <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                <property name="com.jaspersoft.studio.unit.height" value="px"/>
+            </element>
+            <element kind="textField" uuid="09cf3e41-ebe6-4888-bbcf-be6a44655539" x="0" y="375" width="515" height="110" fontName="Times New Roman" fontSize="13.0">
+                <expression><![CDATA[
+        "Article premier. - Pour compter du "
+        + new java.text.SimpleDateFormat("dd MMMM yyyy", java.util.Locale.FRENCH).format($F{date_debut})
+        + ", Madame " +$P{personnelPrenom}+ " " + $P{personnelNom}+ ", matricule de solde n° "+ $P{matricule}
+        + "<b>Technicienne de Laboratoire à l’UFR des Sciences et Technologies</b> de l’Université Assane Seck de Ziguinchor, "
+        + "bénéficie d’un congé de maternité de quatorze semaines consécutives, dont huit semaines postérieures à la délivrance."
+    ]]></expression>
+                <property name="markup" value="styled"/>
+                <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                <property name="com.jaspersoft.studio.unit.y" value="px"/>
+            </element>
+            <element kind="line" uuid="22a61e24-363e-46e9-a552-2934eb35573d" positionType="FixRelativeToBottom" x="58" y="0" width="470" height="1" forecolor="#0066FF">
+                <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                <pen lineWidth="3.0"/>
+            </element>
+            <element kind="line" uuid="2e2aafe1-c980-46bd-a35e-b70a7a4b4bec" x="-10" y="0" width="98" height="1" forecolor="#00FF00">
+                <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                <pen lineWidth="3.0"/>
+            </element>
+            <element kind="staticText" uuid="6b78cdf8-8373-4276-b0c6-9cb940546577" x="0" y="536" width="100" height="15" bold="true" underline="true">
+                <text><![CDATA[Ampliations :]]></text>
+                <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                <property name="com.jaspersoft.studio.unit.y" value="px"/>
+            </element>
+            <property name="com.jaspersoft.studio.unit.height" value="px"/>
+        </band>
+    </detail>
+
+	<pageFooter height="20">
+		<element kind="staticText" uuid="d3a9e4c7-5b6d-4a92-a5f9-e2b7c5a6d9f3" x="0" y="6" width="171" height="14" forecolor="#1E46F7" fontSize="10.0" hTextAlign="Center">
+			<text><![CDATA[BP 523, Diabir/Ziguinchor]]></text>
+			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="line" uuid="3115fc85-2d92-453e-bb46-c3d00fc4eab5" positionType="FixRelativeToBottom" x="75" y="1" width="453" height="1" forecolor="#0066FF">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<pen lineWidth="3.0"/>
+		</element>
+		<element kind="line" uuid="c3f2cded-b603-4e4b-a9d9-49181a814ab9" x="-10" y="1" width="85" height="1" forecolor="#00FF00">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<pen lineWidth="3.0"/>
+		</element>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+	</pageFooter>
+</jasperReport>

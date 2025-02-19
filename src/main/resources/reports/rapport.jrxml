@@ -1,0 +1,80 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="congeAdmReport" language="java" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="50" bottomMargin="50" uuid="c5f8c53a-cb4d-4d8a-bd95-cae0d54028e5">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<query language="sql"><![CDATA[SELECT id, dateDebut, dateFin, dateReprise, nbrJourConge, nbrJourEffective, attestationCession, attestationReprise, arreteConge FROM congeAdm]]></query>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="dateDebut" class="java.util.Date"/>
+	<field name="dateFin" class="java.util.Date"/>
+	<field name="dateReprise" class="java.util.Date"/>
+	<field name="nbrJourConge" class="java.lang.Integer"/>
+	<field name="nbrJourEffective" class="java.lang.Integer"/>
+	<field name="attestationCession" class="java.lang.String"/>
+	<field name="attestationReprise" class="java.lang.String"/>
+	<field name="arreteConge" class="java.lang.String"/>
+	<title height="50">
+		<element kind="staticText" uuid="7d5cf09a-d560-4fc4-ab2b-6ef9beedcb20" x="0" y="0" width="515" height="30" fontSize="18.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Liste des Congés Administratifs]]></text>
+		</element>
+	</title>
+	<columnHeader height="20">
+		<element kind="staticText" uuid="dfb445ae-afbd-4d9a-aeeb-f6eb62ccdaed" x="0" y="0" width="50" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[ID]]></text>
+		</element>
+		<element kind="staticText" uuid="197befef-8c26-40bf-9333-4722925f35c6" x="50" y="0" width="70" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Date de Début]]></text>
+		</element>
+		<element kind="staticText" uuid="d21de661-c994-4604-8fc2-e77443c72256" x="120" y="0" width="70" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Date de Fin]]></text>
+		</element>
+		<element kind="staticText" uuid="4004a33e-b54e-4b8b-99f5-9a82ec93817d" x="190" y="0" width="70" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Date de Reprise]]></text>
+		</element>
+		<element kind="staticText" uuid="1682ee9c-97cd-48fc-a18a-f0eef0248fd6" x="260" y="0" width="70" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Nombre de Jours]]></text>
+		</element>
+		<element kind="staticText" uuid="664537fa-8f0c-4a50-bad2-84b7917fb431" x="260" y="0" width="80" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Nombre de Jours Effectifs]]></text>
+		</element>
+		<element kind="staticText" uuid="c7bc1688-c06c-46b9-afef-05fe5cc9874a" x="410" y="0" width="50" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Attestation Cession]]></text>
+		</element>
+		<element kind="staticText" uuid="e7566f9c-f660-4b22-b1a3-d44d8d829f78" x="460" y="0" width="50" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Attestation Reprise]]></text>
+		</element>
+		<element kind="staticText" uuid="6791fb7c-a5c6-487e-ac59-2bc5bfafa939" x="510" y="0" width="50" height="20" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Arrêté de Congé]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<element kind="textField" uuid="264f9842-ef77-41a1-a27d-267a1ebecc36" x="0" y="0" width="50" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{id}]]></expression>
+			</element>
+			<element kind="textField" uuid="8e611500-2d67-4fdb-b497-0b4faa595473" x="50" y="0" width="70" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{dateDebut})]]></expression>
+			</element>
+			<element kind="textField" uuid="2cb1f30b-ec4f-4c35-9a9f-28e6f7d0cc42" x="120" y="0" width="70" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{dateFin})]]></expression>
+			</element>
+			<element kind="textField" uuid="42248006-9859-4e2e-a06c-cbf0e7fb8a3b" x="190" y="0" width="70" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{dateReprise})]]></expression>
+			</element>
+			<element kind="textField" uuid="a5807318-b742-48fa-ab56-ed21b802f1b5" x="260" y="0" width="70" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{nbrJourConge}]]></expression>
+			</element>
+			<element kind="textField" uuid="22d1e5bd-44bd-497e-88b2-f20ea88277e1" x="330" y="0" width="80" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{nbrJourEffective}]]></expression>
+			</element>
+			<element kind="textField" uuid="bca7d162-d625-4b52-8dd7-b8b8ca035175" x="410" y="0" width="50" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{attestationCession}]]></expression>
+			</element>
+			<element kind="textField" uuid="35a18f17-fc8b-4166-b51d-2eb510fa2413" x="460" y="0" width="50" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{attestationReprise}]]></expression>
+			</element>
+			<element kind="textField" uuid="15dcf3b2-264b-4fd1-ab5a-aa9267dabc35" x="510" y="0" width="50" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{arreteConge}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="50"/>
+</jasperReport>
