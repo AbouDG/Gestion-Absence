@@ -152,7 +152,8 @@ public class CongeAdmServiceImp implements CongeAdmService {
         congeAdm.setPlanning(planning);
 
         // Initialiser le statut du congé
-        congeAdm.setStatut("En attente");
+        congeAdm.setStatutDirecteur("En attente");
+        congeAdm.setStatutRecteur("En attente");
         long diffInDays;
         if (congeAdm.getDateDebut() != null && congeAdm.getDateReprise() != null) {
             long diffInMillies = Math.abs(congeAdm.getDateReprise().getTime() - congeAdm.getDateDebut().getTime());
@@ -182,7 +183,7 @@ public class CongeAdmServiceImp implements CongeAdmService {
                 .orElseThrow(() -> new RuntimeException("Congé avec l'ID " + congeId + " n'existe pas."));
 
         // Vérifier si le statut est déjà "Validé"
-        if ("Validé".equalsIgnoreCase(congeAdm.getStatut())) {
+        if ("Validé".equalsIgnoreCase(congeAdm.getStatutRecteur())) {
             throw new RuntimeException("Le congé est déjà validé.");
         }
 
@@ -213,7 +214,7 @@ public class CongeAdmServiceImp implements CongeAdmService {
         deductionJoursPlanning(planning, nbrJourConge);
 
         // Mise à jour du statut du congé et sauvegarde
-        congeAdm.setStatut("Validé");
+        congeAdm.setStatutRecteur("Validé");
         planningRepository.save(planning);
         return congeAdmRepository.save(congeAdm);
     }
@@ -330,6 +331,7 @@ public class CongeAdmServiceImp implements CongeAdmService {
         // Mise à jour des informations du congé
         System.out.println(existingCongeAdm.getNbrJourEffective());
         existingCongeAdm.setDateDebut(updatedCongeAdm.getDateDebut());
+        existingCongeAdm.setStatutDirecteur(updatedCongeAdm.getStatutDirecteur());
         existingCongeAdm.setDateReprise(updatedCongeAdm.getDateReprise());
         existingCongeAdm.setAttestationCession(updatedCongeAdm.getAttestationCession());
         existingCongeAdm.setAttestationReprise(updatedCongeAdm.getAttestationReprise());

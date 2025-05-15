@@ -30,7 +30,8 @@ public class CongeAdm {
     private String arreteConge;
     private int nbrJourConge;
     private int nbrJourEffective;
-    private String statut;
+    private String statutDirecteur;
+    private String statutRecteur;
 
     @ManyToOne
     @ToString.Exclude

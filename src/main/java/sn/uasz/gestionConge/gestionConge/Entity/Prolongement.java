@@ -30,6 +30,7 @@ public class Prolongement {
     // Relation avec CongeMaternite
     @ManyToOne
     @JoinColumn(name = "conge_maternite_id", nullable = false, referencedColumnName = "id")
+    @JsonIgnore
     private CongeMaternite congeMaternite;
 
 }

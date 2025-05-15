@@ -57,7 +57,6 @@ public class CongeMaternite {
     private Long personnelId;
 
     @OneToMany(mappedBy = "congeMaternite", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonIgnore
     private List<Prolongement> prolongements;
 
 
